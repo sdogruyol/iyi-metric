@@ -1,3 +1,4 @@
+@[Unsafe("the checksum reads each string's bytes through its buffer, and fasta writes each random line straight into a new string's buffer, as the Crystal file it is measured against does")]
 module metric
 
 # Port of crystal-metric's metric.cr to iyi.
