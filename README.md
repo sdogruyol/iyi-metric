@@ -51,6 +51,11 @@ iyi build --release -o metric metric.iyi
 ./metric Brainfuck,Brainfuck2
 ```
 
+Needs iyi 0.21.0 or later. Like `metric.cr`, the checksum reads strings
+through their buffers and `Fasta` writes each line straight into a new
+string's buffer, so `metric.iyi` says so with `@[Unsafe("...")]` above its
+`module` header (SPEC.md III.13), which earlier releases refuse.
+
 A `--release` run without a filter writes `results.js` beside `metric.iyi`;
 a build without `--release` reads it and prints each benchmark's time as an
 award against the release time. `SILENT=1` prints only the summary line,
